@@ -27,7 +27,6 @@ if (typeof this.androgon == "undefined") {
 androgon.calendarTookPart = [];
 androgon.qs = window.location.href.slice(window.location.href.indexOf('?'));
 
-//androgon.host = 'androgon-advent.cloudfoundry.com';
 androgon.host = 'localhost:3000';
 
 if (!$.cookie('AndrogonLottery')) {
