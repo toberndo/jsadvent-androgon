@@ -1,6 +1,0 @@
-{"name":"fdsfds","street":"afdsafd","city":"afdsfd","zip":"afdsaf","country":"afdsafd","email":"afdsafdsaf","tst":"Sat Dec 10 2011 11:42:49 GMT+0100 (CET)","agb":"on"}
-{"name":"afdsafdsa","street":"afdsfda","city":"afdsafd","zip":"afdsafd","country":"afdsafd","email":"afdsafds","tst":"Fri Dec 09 2011 12:09:38 GMT+0100 (CET)","agb":"on"}
-{"name":"sfdsfds","street":"sfsfds","city":"sfdsfsdf","zip":"sfdsfsd","country":"","email":"fsfdsfdsfds","tst":"Thu Dec 08 2011 12:12:50 GMT+0100 (CET)","agb":"on"}
-{"name":"afsafd","street":"afsadf","city":"asfdsafds","zip":"afdsfd","country":"","email":"asfdsafd","tst":"Sat Dec 10 2011 15:58:01 GMT+0100 (CET)","agb":"on"}
-{"name":"afdsfa","street":"afdasfd","city":"afdsafd","zip":"afdsaf","country":"","email":"afdsafda","tst":"Fri Dec 09 2011 16:04:46 GMT+0100 (CET)","agb":"on"}
-{"name":"afsafd","street":"afdsafd","city":"afdsafd","zip":"afdsafd","country":"","email":"afdasfd","tst":"Thu Dec 08 2011 16:16:52 GMT+0100 (CET)","agb":"on"}
