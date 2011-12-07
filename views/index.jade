@@ -1,0 +1,94 @@
+#container
+  header(role='banner')
+    #header
+      hgroup
+        h1.headline
+          span#headline-first
+            | 
+            span.color1 HTML5
+            | 
+            span.color2 ADVENT
+          | 
+          span.color3 URE
+          | 
+          span
+            span.color4 CALENDAR
+            | 
+            span 2011
+        h2.headline 24 Your Tagline Here
+      p.disclaimer 
+        | ( HTML5 Advent calendar was designed and developed by ZingChart. 
+        | This code may be distributed, altered and re-used for new projects per the license but we would prefer attribution and a backlink to
+        a(href='http://www.zingchart.com/', target='_blank') http://zingchart.com
+        |  be displayed in the page footer. )
+      p ( Click 'day' below to jump to 'day' content )
+  nav(role='navigation')
+    #calendar
+      ul.component-calendar
+        each val, key in days
+          day = key.slice(3)
+          col = day % 4 + 1
+          liClasses = []
+          - liClasses.push('color'+col)
+          if val.active
+            - liClasses.push('active')
+          li(class=liClasses)
+            a(href='#'+key)
+              span.day
+                strong= day
+                span &nbsp;
+              span.content
+                small= day
+                img(src=val.thumb, width='126', height='91')
+                strong= val.short
+  article(role='main')
+    #daydetail
+      ul#daydetail-list
+        li
+          section
+            h1 Day Details
+              #dayx.daydetail-content
+                .right
+                  hgroup
+                    h2
+                    h3
+                  #daydescr
+                  p.opentp Take part in the tombola:
+                  a.opentp.green.styled_button Let's go
+                  #tookPart.success Your participation is confirmed.
+                .left
+                  a(target='_blank')
+                    img(widht='356')
+                .clearfix
+                != partial('takepart')
+            p.top
+              a(href='#container') Back to Top      
+  footer(role='contentinfo')
+    #footer
+      #zingchart
+        ul
+          li
+            span Brought to you by
+            a#zingchart-logo(href='http://www.zingchart.com', target='_blank', title='Click here for more information on ZingChart')
+                img(src='images/logo-zingchart.png', width='88', height='31', alt='Click here for more information on ZingChart') 
+      #zingchart-box.component-box.arrow-right
+        .inner
+          .text
+            p
+              img(src='images/logo-zingchart.png', width='88', height='31', alt='ZingChart')
+            p Build HTML5 &amp; Flash charts and graphs with the latest &amp; greatest features and technologies.
+            p
+              a(href='http://www.zingchart.com/html5_rocks', target='_blank') zingchart.com/html5_rocks
+      .disclaimer
+        p This site is best viewed in 
+          a(href='http://www.apple.com/safari/download/', target='_blank', title='Click here to visit the Apple Safari download page [External]') Safari, 
+          a(href='http://www.google.com/chrome', target='_blank', title='Click here to visit the Google Chrome download page [External]') Chrome,
+          a(href='http://www.opera.com/download/', target='_blank', title='Click here to visit the Opera download page [External]') Opera, 
+          a(href='http://windows.microsoft.com/ie9', target='_blank', title='Click here to visit the IE9 download page [External]') IE9 
+          | or 
+          a(href='http://www.mozilla.com/en-US/firefox/personal.html', target='_blank', title='Click here to visit the Firefox download page [External]') Firefox
+          
+script(src='javascripts/jquery-1.7.min.js')
+script(src='javascripts/jquery.cookie.js')
+script(src='javascripts/common.js')
+script(src='javascripts/androgon.js')

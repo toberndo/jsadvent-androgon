@@ -1,0 +1,44 @@
+#takepart
+  form#tpform.vertical_form
+    fieldset
+      legend Take part in the tombola
+      ul#addrlist
+        li
+          label(for='name') Name
+          input#name.requiredfield(name='name', type='text', style='width:260px')
+          #name-notes.form_input_notes Please enter your name.
+        li
+          label(for='street') Street
+          input#street.requiredfield(name='street', type='text', style='width:260px')
+          #street-notes.form_input_notes Please enter your street.
+        li
+          label(for='city') City
+          input#city.requiredfield(name='city', type='text', style='width:260px')
+          #city-notes.form_input_notes Your city please.
+        li
+          label(for='zip') ZIP
+          input#zip.requiredfield(name='zip', type='text', size='8')
+          #zip-notes.form_input_notes We need your ZIP code
+        li
+          label(for='country') Country
+          input#country.normalfield(name='country', type='text', style='width:200px')
+        li
+          label(for='email') Email
+          input#email.requiredfield(name='email', type='text', style='width:260px')
+          #email-notes.form_input_notes Important: your email!
+        input#tst(type="hidden", name="tst", value="")
+      fieldset.tpwhatfs
+        p All participants have the chance to win today:
+        div#tpwhat
+          h2
+          h3
+      #tpmessage.success
+    fieldset.hideonsuc
+      input#agb(type='checkbox', name='agb')
+      | I hereby confirm the
+      a(href='https://www.google.com/#&q=terms+and+conditions', target='_blank') terms & conditions
+      #agb-notes.form_input_notes Please confirm terms & conditions.
+    fieldset.fieldsetbuttons.hideonsuc
+      div
+        a#tpsubmit.confirm_button.grey.styled_button Submit
+        a#tpcancel.cancel_button.grey.styled_button Cancel

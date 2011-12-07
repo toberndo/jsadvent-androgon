@@ -49,7 +49,9 @@ else {
         return this.each(function() {
 
             var calendar = $(this);
-        
+            
+            // this is done server side
+            /*
             calendar.find('li').each(function(){
                 if ( settings.month == 12 && settings.date >= parseInt( $(this).find('.day').text(), 10) ) {
                     $(this).addClass('active');
@@ -57,7 +59,8 @@ else {
                     $(this).removeClass('active');
                 }
             });
-        
+            */
+            
             // SET OFFSET VALUE
             var offset = '-' + $(this).children(':first-child').width();
 
@@ -138,10 +141,19 @@ else {
 
                             if (bRaiseOverlay) {
                                 var ordinal = $(this).find('strong').text();
-                                var selectedDay = '#day'+ordinal;
-                                var selectedDayCode = $(selectedDay).html();
-                                
-                                $(this).PINT_showOverlay(selectedDayCode);
+                                //var selectedDayId = '#day'+ordinal;
+                                var selectedDayId = '#dayx';
+                                var selectedDay = $(selectedDayId);
+				
+				// add hook before showOverlay
+				if ($(this).PINT_beforeShowOverlay) {
+                                  var callback = function(context) {
+                                    return function(content) { context.PINT_showOverlay(content); }
+                                  }
+				  $(this).PINT_beforeShowOverlay(ordinal, selectedDay, callback($(this)));
+				} else {
+				  $(this).PINT_showOverlay(selectedDay.html());
+				}
                             }
                         })
 
@@ -254,13 +266,20 @@ else {
     
     /** OVERLAY: CENTER **********/
     // Centers the Overlay on browser resize
-    $.fn.PINT_centerOverlay = function() {
-    
-        $('#overlay-main')
+    $.fn.PINT_centerOverlay = function(animate) {
+        var overlayTop = (($(window).height() - $('#overlay-main').outerHeight()) / 2) + $(window).scrollTop() + "px";
+        var overlayLeft = (($(window).width() - $('#overlay-main').outerWidth()) / 2) + $(window).scrollLeft() + "px"; 
+        if (!animate) {
+          $('#overlay-main')
             .css("position","absolute")
-            .css("top", (($(window).height() - $('#overlay-main').outerHeight()) / 2) + $(window).scrollTop() + "px")
-            .css("left", (($(window).width() - $('#overlay-main').outerWidth()) / 2) + $(window).scrollLeft() + "px");    
-    
+            .css("top", overlayTop)
+            .css("left", overlayLeft);
+        } else {
+          $('#overlay-main').animate({
+            top : overlayTop,
+            left : overlayLeft
+          }, 350);
+        }
     }
 
     /** TOOLTIP **********/

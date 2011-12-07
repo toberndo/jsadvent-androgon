@@ -1,0 +1,7 @@
+/* enhancements for the lottery
+------------------------------------------------------------------------------------- */
+#takepart {width:640px;position:relative;float:left;display:none;margin:10px;padding:0;}
+.tpwhatfs {width:250px;float:right;}
+a.opentp {margin-left: 70px;}
+#tpmessage {width:200px;float:right;margin-right:0;display:none;}
+#addrlist {float:left;}
