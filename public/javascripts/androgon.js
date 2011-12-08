@@ -25,7 +25,6 @@ if (typeof this.androgon == "undefined") {
 }
 
 androgon.calendarTookPart = [];
-androgon.qs = window.location.href.slice(window.location.href.indexOf('?'));
 
 androgon.host = 'localhost:3000';
 
@@ -228,3 +227,14 @@ if (!$.cookie('AndrogonLottery')) {
   }
 
 }(jQuery));
+
+$(document).ready(function() {
+  // get query string
+  var index = window.location.href.indexOf('?');
+  if (index ==! -1) {
+    androgon.qs = window.location.href.slice(index);
+  } else {
+    androgon.qs = '';
+  }
+  
+});
