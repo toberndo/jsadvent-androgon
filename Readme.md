@@ -45,6 +45,7 @@ Set cheat parameter
     var CHEAT_PARA = 'should_be_secret';
     
 This URL parameter allows to look behind doors that are not yet open :)
+
 E.g.
 
     http://localhost:3000/?should_be_secret=10
