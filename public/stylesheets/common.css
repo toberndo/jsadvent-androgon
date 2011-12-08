@@ -142,7 +142,7 @@ h4{ margin:0 0 2px; color:#000; font:normal 18px/20px helvetica,sans-serif; }
 
 /* 'DAY' DETAIL
 ------------------------------------------------------------------------------------- */
-#daydetail { margin:170px 0 0; }
+#daydetail { margin:170px 0 0; display:none; }
 .js #daydetail { display:none; }
 /* -- List Styles */
 #daydetail-list { margin:0 auto; width:686px; }
