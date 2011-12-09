@@ -47,22 +47,22 @@
         li
           section
             h1 Day Details
-              #dayx.daydetail-content
-                .right
-                  hgroup
-                    h2
-                    h3
-                  #daydescr
-                  p.opentp Take part in the tombola:
-                  a.opentp.green.styled_button Let's go
-                  #tookPart.success Your participation is confirmed.
-                .left
-                  a(target='_blank')
-                    img(widht='356')
-                .clearfix
-                != partial('takepart')
-            p.top
-              a(href='#container') Back to Top      
+            #dayx.daydetail-content
+              .right
+                hgroup
+                  h2
+                  h3
+                #daydescr
+                p.opentp Take part in the tombola:
+                a.opentp.green.styled_button Let's go
+                #tookPart.success Your participation is confirmed.
+              .left
+                a(target='_blank')
+                  img(widht='356')
+              .clearfix
+              != partial('takepart')
+          p.top
+            a(href='#container') Back to Top      
   footer(role='contentinfo')
     #footer
       #zingchart
